@@ -4,7 +4,7 @@ using namespace std;
 // ================= 代码实现开始 =================
 
 /* 请在这里定义你需要的全局变量 */
-std::vector<int> Next;
+vector<int> Next;
 
 // 这是匹配函数，将所有匹配位置求出并返回
 // n：串 A 的长度
@@ -18,7 +18,7 @@ vector<int> match(int n, string A, int m, string B) {
 
     int j=Next[0]=-1; //j为匹配失败时跳转到的位置
     for(int i=1;i<m;++i){
-        while( j>0&&B[i]!=B[j+1])
+        while( j>=0&&B[i]!=B[j+1])
             j=Next[j];
         if(B[i]==B[j+1])
             ++j;    //当前位置匹配,++j
